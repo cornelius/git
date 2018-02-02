@@ -1,0 +1,14 @@
+* Set first author of list as author
+* Rename authors.current to authors.co-authors
+* Check in authors_enabled if co-authors are set
+
+* Option for git log?
+
+* Use trailer framework to manipulate and parse trailers
+
+* Don't commit, when just quitting editor with some pre-filled co-authors
+* Don't add co-author, if it's already there
+
+* Shortlog?
+
+* git authors-log ?

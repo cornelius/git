@@ -34,6 +34,7 @@
 #include "notes-utils.h"
 #include "mailmap.h"
 #include "sigchain.h"
+#include "authors.h"
 
 static const char * const builtin_commit_usage[] = {
 	N_("git commit [<options>] [--] <pathspec>..."),
@@ -795,6 +796,9 @@ static int prepare_to_commit(const char *index_file, const char *prefix,
 
 	if (clean_message_contents)
 		strbuf_stripspace(&sb, 0);
+
+	if (co_authors_enabled())
+		append_co_authors(&sb);
 
 	if (signoff)
 		append_signoff(&sb, ignore_non_trailer(sb.buf, sb.len), 0);
